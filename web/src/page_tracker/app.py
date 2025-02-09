@@ -13,7 +13,7 @@ def index():
         page_views = redis().incr("page_views")
     except RedisError:
         app.logger.exception("Redis error")
-        return "Sorry, something went wrong \N{PENSIVE FACE}", 500
+        return "Sorry, something went wrong \N{THINKING FACE}", 500
     else:
         return f"Page views: {page_views}"
 
